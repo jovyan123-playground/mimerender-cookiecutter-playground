@@ -33,7 +33,7 @@ jobs:
     - name: Create pure frontend extension
       run: |
         cookiecutter . --no-input
-        cd myextension
+        pushd myextension
         pip install -e .
         jupyter labextension develop . --overwrite
         jlpm run eslint:check
