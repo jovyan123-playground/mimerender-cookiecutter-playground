@@ -73,7 +73,7 @@ try:
     cmdclass = wrap_installers(pre_develop=builder, ensured_targets=ensured_targets)
 
     setup_args['cmdclass'] = cmdclass
-    setup_args['data_files'] get_data_files(data_files_spec)
+    setup_args['data_files'] = get_data_files(data_files_spec)
 except ImportError:
     pass
 
