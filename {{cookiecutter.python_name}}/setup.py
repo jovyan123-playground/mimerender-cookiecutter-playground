@@ -19,7 +19,6 @@ lab_path = os.path.join(HERE, name, "labextension")
 
 # Representative files that should exist after a successful build
 ensured_targets = [
-    os.path.join(HERE, "lib", "index.js"),
     os.path.join(lab_path, "package.json"),
 ]
 
@@ -69,7 +68,7 @@ try:
         npm_builder,
         get_data_files
     )
-    builder = npm_builder(HERE, build_cmd="build:prod", npm=["jlpm"])
+    builder = npm_builder(HERE, build_cmd="build", npm=["jlpm"])
     cmdclass = wrap_installers(pre_develop=builder, ensured_targets=ensured_targets)
 
     setup_args['cmdclass'] = cmdclass
